@@ -1,12 +1,16 @@
 {
-    "compilerOptions": {
-      "preserveConstEnums": true,
-      "strict": true,
-      "target": "esnext",
-      "module": "esnext",
-      "rootDir": "./",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "downlevelIteration": true
-    }
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "rootDir": "./",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "downlevelIteration": true
+  },
+  "ts-node": {
+    "esm": true,
+    "compiler": "typescript"
   }
+}

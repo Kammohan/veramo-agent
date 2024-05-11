@@ -1,3 +1,28 @@
+
+function hexToBinary(hexString: string): string {
+  return hexString.split('').map(hexChar => {
+    return parseInt(hexChar, 16).toString(2).padStart(4, '0');
+  }).join('');
+ }
+ 
+ 
+ function generateRandomBinary(length: number): string {
+  let binaryString = '';
+  for (let i = 0; i < length; i++) {
+    binaryString += Math.round(Math.random()).toString();
+  }
+  return binaryString;
+ }
+ 
+ 
+ function binaryToHex(binaryString: string): string {
+  let hexString = '';
+  for (let i = 0; i < binaryString.length; i += 4) {
+    hexString += parseInt(binaryString.substring(i, i + 4), 2).toString(16);
+  }
+  return hexString;
+ }
+ 
 // Core interfaces
 import {
     createAgent,
@@ -41,10 +66,16 @@ import {
 const DATABASE_FILE = 'database.sqlite'
 
 // You will need to get a project ID from infura https://www.infura.io
-const INFURA_PROJECT_ID = '<your PROJECT_ID here>'
+const INFURA_PROJECT_ID = 'd04cdb12331148959e669e78f51e21e3'
 
 // This will be the secret key for the KMS
-const KMS_SECRET_KEY =
+const ORIGINAL_KMS_HEX_KEY = '0894d284e4f27eab9db3ca10c324d971de5bb82ff2a4e3961905b06a36fadcd0';
+const binaryKey = hexToBinary(ORIGINAL_KMS_HEX_KEY);
+const newBinaryKey = generateRandomBinary(binaryKey.length);
+console.log("Binary Key:", newBinaryKey);
+const newHexKey = binaryToHex(newBinaryKey);
+console.log(" New Hex Key:", newHexKey);
+const KMS_SECRET_KEY = '0894d284e4f27eab9db3ca10c324d971de5bb82ff2a4e3961905b06a36fadcd0';
   '< you can generate a key by running `npx @veramo/cli config create-secret-key` in a terminal>'
 
 

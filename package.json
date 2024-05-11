@@ -1,4 +1,23 @@
 {
   "name": "veramo-agent",
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@veramo/core": "^5.5.3",
+    "@veramo/credential-w3c": "^5.5.3",
+    "@veramo/data-store": "^5.5.3",
+    "@veramo/did-manager": "^5.5.3",
+    "@veramo/did-provider-ethr": "^5.5.3",
+    "@veramo/did-resolver": "^5.5.3",
+    "@veramo/key-manager": "^5.5.3",
+    "@veramo/kms-local": "^5.5.3",
+    "ethr-did-resolver": "^10.1.0",
+    "sqlite3": "^5.1.6",
+    "web-did-resolver": "^2.0.27"
+  }
 }
