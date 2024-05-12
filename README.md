@@ -40,6 +40,9 @@ async function createDid() {
 
 createDid()
 
+PLEASE USE THIS DOCUMENTATION FOR AN UPDATED VERSION:
+https://veramo.io/docs/node_tutorials/node_setup_identifiers
+
 ## Contributions
 Contributions to this project are welcome! Please adhere to this project's code of conduct.
 
